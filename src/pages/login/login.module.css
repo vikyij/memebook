@@ -1,0 +1,92 @@
+a:hover {
+    color: #fff;
+}
+.container {
+    background-color: #141518;
+    color: #E7E7E7;
+    padding: 20px 0px 10px 20px;
+}
+
+.register {
+    margin-top: 60px;
+    width: 28%;
+}
+
+.icons{
+    background-color: #2C2F34;
+    margin: 5px 0px 7px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.icon {
+    border-bottom: 4px solid #39568E;
+    border-radius: 5px;
+    background-color: #212121;
+    width: 55px;
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs {
+    background-color: #2C2F34;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.input {
+    background-color: #212121;
+}
+
+.btnWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.btn {
+    padding: 8px 25px;
+    border-radius: 3px;
+}
+
+.signinBtn:hover {
+     color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+        height: 100vh;
+    }
+    
+    .register {
+        margin-top: 40px;
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    .container {
+        height: 100vh;
+    }
+
+    .register {
+        margin-top: 40px;
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+    
+    .register {
+        width: 50%;
+    }
+}

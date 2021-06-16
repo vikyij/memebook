@@ -1,34 +1,67 @@
-import {render,screen} from '@testing-library/react'
-import SignUp from './Signup'
+import { render, screen } from "@testing-library/react";
+import { Router } from "react-router-dom";
+import { createMemoryHistory } from "history";
+import SignUp from "./Signup";
 
-describe('renders the different inputs', ()=> {
-    test('renders username field', ()=> {
-        render(<SignUp/>)
-        const username = screen.getByPlaceholderText("Username")
-        expect(username).toBeInTheDocument()
-    })
+describe("renders the different inputs", () => {
+  test("renders username field", () => {
+    const history = createMemoryHistory();
 
-    test('renders email field', ()=> {
-        render(<SignUp/>)
-        const email = screen.getByPlaceholderText("Email")
-        expect(email).toBeInTheDocument()
-    })
+    render(
+      <Router history={history}>
+        <SignUp />
+      </Router>
+    );
+    render();
+    const username = screen.getByPlaceholderText("Username");
+    expect(username).toBeInTheDocument();
+  });
 
-    test('renders password field', ()=> {
-        render(<SignUp/>)
-        const password = screen.getByPlaceholderText("Password")
-        expect(password).toBeInTheDocument()
-    })
+  test("renders email field", () => {
+    const history = createMemoryHistory();
 
-    test('renders retype password field', ()=> {
-        render(<SignUp/>)
-        const retypePassword = screen.getByPlaceholderText("Retype Password")
-        expect(retypePassword).toBeInTheDocument()
-    })
+    render(
+      <Router history={history}>
+        <SignUp />
+      </Router>
+    );
+    const email = screen.getByPlaceholderText("Email");
+    expect(email).toBeInTheDocument();
+  });
 
-    test('renders phone number field', ()=> {
-        render(<SignUp/>)
-        const phoneNumber = screen.getByPlaceholderText("Phone Number")
-        expect(phoneNumber).toBeInTheDocument()
-    })
-}) 
+  test("renders password field", () => {
+    const history = createMemoryHistory();
+
+    render(
+      <Router history={history}>
+        <SignUp />
+      </Router>
+    );
+    const password = screen.getByPlaceholderText("Password");
+    expect(password).toBeInTheDocument();
+  });
+
+  test("renders retype password field", () => {
+    const history = createMemoryHistory();
+
+    render(
+      <Router history={history}>
+        <SignUp />
+      </Router>
+    );
+    const retypePassword = screen.getByPlaceholderText("Retype Password");
+    expect(retypePassword).toBeInTheDocument();
+  });
+
+  test("renders phone number field", () => {
+    const history = createMemoryHistory();
+
+    render(
+      <Router history={history}>
+        <SignUp />
+      </Router>
+    );
+    const phoneNumber = screen.getByPlaceholderText("Phone Number");
+    expect(phoneNumber).toBeInTheDocument();
+  });
+});
