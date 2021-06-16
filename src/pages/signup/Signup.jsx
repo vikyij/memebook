@@ -7,7 +7,6 @@ import {
   Input,
   Box,
   Flex,
-  Link,
   useToast,
   
 } from "@chakra-ui/react";
@@ -20,6 +19,7 @@ import {
   FaGoogle,
   FaYahoo,
 } from "react-icons/fa";
+import { Link } from 'react-router-dom'
 
 const Signup = () => {
   const [input, setInput] = useState("");
@@ -49,7 +49,27 @@ const Signup = () => {
       phoneNumber,
     }));
 
-    if (password !== retypePassword) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if(username === "" || email === "" || password === "" || retypePassword === "" || phoneNumber === "") {
+      toast({
+        title: "Error",
+        description: "Input fields cannot be empty",
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      });
+      return
+    } else if(!re.test(String(email).toLowerCase())){
+      toast({
+        title: "Error",
+        description: "Invalid email!",
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      });
+      return
+    }else if (password !== retypePassword) {
       toast({
         title: "Error",
         description: "Your Passwords do not match!",
@@ -57,7 +77,12 @@ const Signup = () => {
         duration: 9000,
         isClosable: true,
       });
+      return
     }
+
+   
+
+
   };
 
   return (
@@ -153,27 +178,32 @@ const Signup = () => {
                 />
 
               </FormControl>
-              <Text fontSize="12px" style={{ textAlign: "center" }}>
+              
+              <Box style={{ textAlign: "center" }}>
+                <Text fontSize="12px" >
                 Standard message and data rates may apply
               </Text>
-              <Text fontSize="12px" style={{ textAlign: "center" }}>
-                <Link href="#" target="blank" color="white">
+              <Text fontSize="12px">
+                <a href="#" target="blank" color="white">
                   <strong>Why do I have to verify my phone?</strong>
-                </Link>
+                </a>
               </Text>
+              </Box>
             </Box>
-            <div className={styles.btnWrapper}>
+            
+          </form>
+          <div className={styles.btnWrapper}>
               <button className={`${styles.btn} ${styles.signinBtn}`}>
-                sign in
+                <Link to="/login">sign in</Link>
               </button>
               <button
                 className={styles.btn}
                 style={{ backgroundColor: "#5C69FF" }}
+                onClick={handleSubmit}
               >
                 Next
               </button>
             </div>
-          </form>
         </Box>
       </div>
       <Flex style={{ marginTop: "-20px" }}>
