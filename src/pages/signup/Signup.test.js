@@ -1,5 +1,5 @@
 import {render,screen} from '@testing-library/react'
-import SignUp from './Signup.jsx'
+import SignUp from './Signup'
 
 describe('renders the different inputs', ()=> {
     test('renders username field', ()=> {
