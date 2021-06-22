@@ -61,6 +61,13 @@ a:hover {
      color: #fff;
 }
 
+.addon {
+  background-color: #404040 !important;
+  border: 0px !important;
+  font-size: 14px;
+  color: #999999 !important;
+}
+
 @media only screen and (max-width: 600px) {
     .container {
         padding: 10px;

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
-import SignUp from "./Signup";
+import SignUp from "./index";
 
 describe("renders the different inputs", () => {
   test("renders username field", () => {

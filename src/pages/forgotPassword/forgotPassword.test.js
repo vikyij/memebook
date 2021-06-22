@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
-import Login from "./index";
+import ForgotPassword from "./index";
 
 describe("renders the different inputs", () => {
   test("renders username field", () => {
@@ -9,22 +9,10 @@ describe("renders the different inputs", () => {
 
     render(
       <Router history={history}>
-        <Login />
+        <ForgotPassword />
       </Router>
     );
     const username = screen.getByPlaceholderText("Username");
     expect(username).toBeInTheDocument();
-  });
-
-  test("renders password field", () => {
-    const history = createMemoryHistory();
-
-    render(
-      <Router history={history}>
-        <Login />
-      </Router>
-    );
-    const password = screen.getByPlaceholderText("Password");
-    expect(password).toBeInTheDocument();
   });
 });
