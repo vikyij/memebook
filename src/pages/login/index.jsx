@@ -130,7 +130,7 @@ const Login = () => {
               style={{ backgroundColor: "#5C69FF" }}
               onClick={handleSubmit}
             >
-              Sign In
+              <Link to="/home">Sign In</Link>
             </button>
           </div>
         </Box>
