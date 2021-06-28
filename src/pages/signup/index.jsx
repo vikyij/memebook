@@ -20,6 +20,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import { refreshTokenSetup } from "../../utils/refreshToken";
 
 const clientId =
@@ -49,6 +50,10 @@ const Signup = () => {
     alert(
       `Failed to login. 😢 Please ping this to repo owner twitter.com/sivanesh_fiz`
     );
+  };
+
+  const responseFacebook = (response) => {
+    console.log(response);
   };
 
   const handleInput = (e) => {
@@ -122,7 +127,15 @@ const Signup = () => {
             Register with
           </Text>
           <Flex className={styles.icons} justify="space-between">
-            <FaFacebookF className={styles.icon} />
+            <FacebookLogin
+              appId="327551925486564"
+              autoLoad={true}
+              fields="name,email,picture"
+              callback={responseFacebook}
+              render={renderProps => (
+                <button onClick={renderProps.onClick}><FaFacebookF className={styles.icon} /></button>
+              )}
+            />
             <FaTwitter className={styles.icon} />
             <FaApple className={styles.icon} />
             <GoogleLogin
