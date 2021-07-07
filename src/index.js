@@ -4,6 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router } from "react-router-dom"
 import "./index.css";
+import "../src/assets/colors.css"
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 

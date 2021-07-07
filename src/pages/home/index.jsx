@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import Navigation from "../../components/Navigation";
+import Cards from "../../components/Cards"
+import styles from "./home.module.css";
 
 const Home = () => {
-  return (
-    <h1>Home page</h1>
-  )
-}
+  const { wrapper } = styles;
 
-export default Home
+  return (
+    <div className={wrapper}>
+      <Navigation />
+      <Cards />
+   </div>
+  );
+};
+
+export default Home;
