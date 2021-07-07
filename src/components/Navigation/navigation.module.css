@@ -1,0 +1,26 @@
+a {
+  color: var(--white);
+}
+
+.navbarWrapper {
+  background-color: var(--bg);
+  color: var(--white);
+}
+
+.nav-link {
+  color: var(--white);
+}
+
+.btnStyle {
+  background-color: var(--btncolor);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.searchItem {
+  margin: 0px 130px;
+}
+
+.searchInput{
+   width: 500px !important;
+}

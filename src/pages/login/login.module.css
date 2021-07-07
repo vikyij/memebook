@@ -2,7 +2,7 @@ a:hover {
     color: #fff;
 }
 .container {
-    background-color: #141518;
+    background-color: var(--bg);
     color: #E7E7E7;
     padding: 20px 0px 10px 20px;
 }
