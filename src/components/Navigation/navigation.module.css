@@ -18,9 +18,56 @@ a {
 }
 
 .searchItem {
-  margin: 0px 130px;
+  margin: 0px 100px;
 }
 
 .searchInput{
    width: 500px !important;
+}
+
+.dropdownMenu {
+  background-color: #53565D;
+  right: 0;
+  margin-top: 30px;
+  min-width: 8.4rem
+}
+
+.dropdownMenu::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -3%;
+    left: 63%;
+    right: 5px;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 10px solid #53565D;
+    margin-left: 12px;
+}
+
+.dropDown {
+  width: 43px;
+  height: 44px;
+  background: var(--btncolor);
+  border-radius: 50%;
+  text-align: center;
+  padding: 8px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.dropdownToggle::after {
+  display: none;
+}
+
+.dropdownItem{
+  color: var(--white);
+  padding: 12px;
+}
+
+.dropdownItem:hover {
+  background-color: #6f7073;
+  color: var(--white);
 }

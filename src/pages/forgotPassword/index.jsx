@@ -102,9 +102,9 @@ const ForgotPassword = () => {
         </Box>
       </div>
       <Flex style={{ justifyContent: "center", marginTop: "20px" }}>
-        <a href="#" style={{ fontSize: "12px", color: "#65666A" }}>
+        <Link to="#" style={{ fontSize: "12px", color: "#65666A" }}>
           © 2021 memebook.
-        </a>
+        </Link>
       </Flex>
     </div>
   );
