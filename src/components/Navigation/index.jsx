@@ -1,53 +1,63 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Heading,
   Input,
   InputGroup,
   InputRightElement,
-} from "@chakra-ui/react";
-import { FaSearch, FaSignOutAlt } from "react-icons/fa";
-import { FiSettings } from "react-icons/fi";
+} from '@chakra-ui/react';
+import { FaSearch, FaSignOutAlt } from 'react-icons/fa';
+import { FiSettings } from 'react-icons/fi';
 
-
-import styles from "./navigation.module.css";
+import styles from './navigation.module.css';
 
 const Navigation = () => {
-  const { navbarWrapper, btnStyle, searchItem, searchInput, dropdownMenu,dropDown, dropdownToggle, dropdownItem } = styles;
+  const {
+    navbarWrapper,
+    btnStyle,
+    searchItem,
+    searchInput,
+    dropdownMenu,
+    dropDown,
+    dropdownToggle,
+    dropdownItem,
+  } = styles;
 
   const handleDropdown = () => {
-    let elem = document.getElementsByClassName("dropdown-menu");
+    let elem = document.getElementsByClassName('dropdown-menu');
 
-    if (elem[0].style.display === "none") {
-      elem[0].style.display = "block";
+    if (elem[0].style.display === 'none') {
+      elem[0].style.display = 'block';
     } else {
-      elem[0].style.display = "none";
+      elem[0].style.display = 'none';
     }
   };
 
   return (
     <nav className={`navbar navbar-expand-md ${navbarWrapper}`}>
-      <Link className="navbar-brand " to="/home">
-        <Heading size="lg" m={4}>
+      <Link className='navbar-brand ' to='/home'>
+        <Heading size='lg' m={4}>
           memebook
         </Heading>
       </Link>
 
       <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#collapsibleNavbar"
+        className='navbar-toggler'
+        type='button'
+        data-toggle='collapse'
+        data-target='#collapsibleNavbar'
       >
-        <span className="navbar-toggler-icon"></span>
+        <span className='navbar-toggler-icon'></span>
       </button>
 
-      <div className="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul className="navbar-nav" style={{ alignItems: "center" }}>
-          <li className="nav-item">
-            <button type="button" className={`btn ${btnStyle}`}>
-              New Post
-            </button>
+      <div className='collapse navbar-collapse' id='collapsibleNavbar'>
+        <ul className='navbar-nav' style={{ alignItems: 'center' }}>
+          <li className='nav-item'>
+            <Link to='/upload'>
+              <button type='button' className={`btn ${btnStyle}`}>
+                New Post
+              </button>
+            </Link>
           </li>
           <li className={`nav-item ${searchItem}`}>
             <InputGroup className={searchInput}>
@@ -61,20 +71,16 @@ const Navigation = () => {
               />
             </InputGroup>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/login">
-              <button
-                type="button"
-                className={`btn btn-outline-dark`}
-                style={{ color: "var(--white)" }}
-              >
+          <li className='nav-item'>
+            <Link className='nav-link' to='/login'>
+              <button type='button' className={`btn ${btnStyle}`}>
                 Sign in
               </button>
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/signup">
-              <button type="button" className={`btn ${btnStyle}`}>
+          <li className='nav-item'>
+            <Link className='nav-link' to='/signup'>
+              <button type='button' className={`btn ${btnStyle}`}>
                 Sign up
               </button>
             </Link>
@@ -82,26 +88,34 @@ const Navigation = () => {
           <div class={`dropdown ${dropDown}`} onClick={handleDropdown}>
             <div
               class={`dropdown-toggle ${dropdownToggle}`}
-              data-toggle="dropdown"
+              data-toggle='dropdown'
             >
               m
             </div>
-            <div className={`dropdown-menu ${dropdownMenu}`} style={{display: "none"}}>
-              <Link class={`dropdown-item ${dropdownItem}`} to="#">
+            <div
+              className={`dropdown-menu ${dropdownMenu}`}
+              style={{ display: 'none' }}
+            >
+              <Link class={`dropdown-item ${dropdownItem}`} to='#'>
                 Posts
               </Link>
-              <Link class={`dropdown-item ${dropdownItem}`} to="#">
+              <Link class={`dropdown-item ${dropdownItem}`} to='#'>
                 Comments
               </Link>
-              <Link class={`dropdown-item ${dropdownItem}`} to="#">
+              <Link class={`dropdown-item ${dropdownItem}`} to='#'>
                 About
               </Link>
-              <div class="dropdown-divider"></div>
-              <Link class={`dropdown-item ${dropdownItem}`} to="#">
-                <div style={{display: 'flex', alignItems: 'center'}}><FiSettings style={{marginRight: '10px'}}/> Settings</div>
+              <div class='dropdown-divider'></div>
+              <Link class={`dropdown-item ${dropdownItem}`} to='#'>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <FiSettings style={{ marginRight: '10px' }} /> Settings
+                </div>
               </Link>
-              <Link class={`dropdown-item ${dropdownItem}`} to="/login">
-                <div style={{display: 'flex', alignItems: 'center'}}>< FaSignOutAlt style={{marginRight: '10px'}}/>Sign Out</div>
+              <Link class={`dropdown-item ${dropdownItem}`} to='/login'>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <FaSignOutAlt style={{ marginRight: '10px' }} />
+                  Sign Out
+                </div>
               </Link>
             </div>
           </div>

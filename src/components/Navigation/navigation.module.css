@@ -12,7 +12,7 @@ a {
 }
 
 .btnStyle {
-  background-color: var(--btncolor);
+  border: 1px solid var(--btnBorderColor);
   color: var(--white);
   font-weight: 600;
 }
