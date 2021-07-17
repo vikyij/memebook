@@ -122,9 +122,9 @@ const Login = () => {
             </Box>
           </form>
           <div className={styles.btnWrapper}>
-            <button className={`${styles.btn} ${styles.signinBtn}`}>
-              <Link to="/signup">need an account</Link>
-            </button>
+           <Link to="/signup"> <button className={`${styles.btn} ${styles.signinBtn}`}>
+              need an account
+            </button></Link>
             <button
               className={styles.btn}
               style={{ backgroundColor: "#5C69FF" }}
